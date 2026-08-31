@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalori Atlası - Besin Değerleri ve Rehberi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    .hero-section { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 60px 0; }
+    .card { border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .badge-macro { font-size: 0.85rem; padding: 6px 10px; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero & Arama -->
+  <header class="hero-section text-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Kalori Atlası</h1>
+      <p class="lead">Yiyeceklerin kalori ve makro değerlerini anında arayın.</p>
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+          <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="Besin adı yazın (Örn: Tavuk Göğsü, Pirinç, Yumurta)...">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <!-- Kalori Tablosu -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h3 class="fw-bold mb-3">Popüler Besinler (100g)</h3>
+        <div class="table-responsive bg-white p-3 rounded shadow-sm">
+          <table class="table table-hover align-middle mb-0" id="foodTable">
+            <thead class="table-light">
+              <tr>
+                <th>Besin Adı</th>
+                <th>Kalori (kcal)</th>
+                <th>Protein (g)</th>
+                <th>Karbonhidrat (g)</th>
+                <th>Yağ (g)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tavuk Göğsü (Pişmiş)</strong></td>
+                <td>165</td>
+                <td><span class="badge bg-success badge-macro">31g</span></td>
+                <td><span class="badge bg-secondary badge-macro">0g</span></td>
+                <td><span class="badge bg-warning text-dark badge-macro">3.6g</span></td>
+              </tr>
+              <tr>
+                <td><strong>Pirinç Pilavı</strong></td>
+                <td>130</td>
+                <td><span class="badge bg-success badge-macro">2.7g</span></td>
+                <td><span class="badge bg-primary badge-macro">28g</span></td>
+                <td><span class="badge bg-warning text-dark badge-macro">0.3g</span></td>
+              </tr>
+              <tr>
+                <td><strong>Yumurta (Haşlanmış - 1 Adet ~50g)</strong></td>
+                <td>78</td>
+                <td><span class="badge bg-success badge-macro">6.3g</span></td>
+                <td><span class="badge bg-primary badge-macro">0.6g</span></td>
+                <td><span class="badge bg-warning text-dark badge-macro">5.3g</span></td>
+              </tr>
+              <tr>
+                <td><strong>Yulaf Ezmesi</strong></td>
+                <td>389</td>
+                <td><span class="badge bg-success badge-macro">16.9g</span></td>
+                <td><span class="badge bg-primary badge-macro">66.3g</span></td>
+                <td><span class="badge bg-warning text-dark badge-macro">6.9g</span></td>
+              </tr>
+              <tr>
+                <td><strong>Zeytinyağı (1 Yemek Kaşığı ~10g)</strong></td>
+                <td>884</td>
+                <td><span class="badge bg-secondary badge-macro">0g</span></td>
+                <td><span class="badge bg-secondary badge-macro">0g</span></td>
+                <td><span class="badge bg-warning text-dark badge-macro">100g</span></td>
+              </tr>
+              <tr>
+                <td><strong>Biftek (Izgara)</strong></td>
+                <td>250</td>
+                <td><span class="badge bg-success badge-macro">26g</span></td>
+                <td><span class="badge bg-secondary badge-macro">0g</span></td>
+                <td><span class="badge bg-warning text-dark badge-macro">15g</span></td>
+              </tr>
+              <tr>
+                <td><strong>Muz (1 Adet Orta)</strong></td>
+                <td>105</td>
+                <td><span class="badge bg-success badge-macro">1.3g</span></td>
+                <td><span class="badge bg-primary badge-macro">27g</span></td>
+                <td><span class="badge bg-warning text-dark badge-macro">0.3g</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 text-muted border-top">
+    <p class="mb-0">© 2026 Kalori Atlası — Tüm Hakları Saklıdır.</p>
+  </footer>
+
+  <script>
+    // Canlı Arama Fonksiyonu
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+      let filter = this.value.toLowerCase();
+      let rows = document.querySelectorAll('#foodTable tbody tr');
+      rows.forEach(row => {
+        let text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
