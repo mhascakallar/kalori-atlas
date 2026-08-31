@@ -18,25 +18,25 @@
   <header class="hero-section text-center">
     <div class="container">
       <h1 class="display-4 fw-bold">Kalori Atlası</h1>
-      <p class="lead">Yiyeceklerin kalori ve makro değerlerini anında arayın.</p>
+      <p class="lead">Yiyeceklerin ve Türk mutfağı lezzetlerinin kalori ve makro değerlerini anında arayın.</p>
       <div class="row justify-content-center mt-4">
         <div class="col-md-6">
-          <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="Besin adı yazın (Örn: Tavuk Göğsü, Pirinç, Yumurta)...">
+          <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="Besin adı yazın (Örn: Mercimek Çorbası, Köfte, Lahmacun)...">
         </div>
       </div>
     </div>
   </header>
 
   <main class="container my-5">
-    <!-- Kalori Tablosu -->
     <div class="row mb-5">
       <div class="col-12">
-        <h3 class="fw-bold mb-3">Popüler Besinler (100g)</h3>
+        <h3 class="fw-bold mb-3">Genişletilmiş Besin Veritabanı (100g / Porsiyon)</h3>
         <div class="table-responsive bg-white p-3 rounded shadow-sm">
           <table class="table table-hover align-middle mb-0" id="foodTable">
             <thead class="table-light">
               <tr>
                 <th>Besin Adı</th>
+                <th>Miktar / Porsiyon</th>
                 <th>Kalori (kcal)</th>
                 <th>Protein (g)</th>
                 <th>Karbonhidrat (g)</th>
@@ -44,55 +44,35 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>Tavuk Göğsü (Pişmiş)</strong></td>
-                <td>165</td>
-                <td><span class="badge bg-success badge-macro">31g</span></td>
-                <td><span class="badge bg-secondary badge-macro">0g</span></td>
-                <td><span class="badge bg-warning text-dark badge-macro">3.6g</span></td>
-              </tr>
-              <tr>
-                <td><strong>Pirinç Pilavı</strong></td>
-                <td>130</td>
-                <td><span class="badge bg-success badge-macro">2.7g</span></td>
-                <td><span class="badge bg-primary badge-macro">28g</span></td>
-                <td><span class="badge bg-warning text-dark badge-macro">0.3g</span></td>
-              </tr>
-              <tr>
-                <td><strong>Yumurta (Haşlanmış - 1 Adet ~50g)</strong></td>
-                <td>78</td>
-                <td><span class="badge bg-success badge-macro">6.3g</span></td>
-                <td><span class="badge bg-primary badge-macro">0.6g</span></td>
-                <td><span class="badge bg-warning text-dark badge-macro">5.3g</span></td>
-              </tr>
-              <tr>
-                <td><strong>Yulaf Ezmesi</strong></td>
-                <td>389</td>
-                <td><span class="badge bg-success badge-macro">16.9g</span></td>
-                <td><span class="badge bg-primary badge-macro">66.3g</span></td>
-                <td><span class="badge bg-warning text-dark badge-macro">6.9g</span></td>
-              </tr>
-              <tr>
-                <td><strong>Zeytinyağı (1 Yemek Kaşığı ~10g)</strong></td>
-                <td>884</td>
-                <td><span class="badge bg-secondary badge-macro">0g</span></td>
-                <td><span class="badge bg-secondary badge-macro">0g</span></td>
-                <td><span class="badge bg-warning text-dark badge-macro">100g</span></td>
-              </tr>
-              <tr>
-                <td><strong>Biftek (Izgara)</strong></td>
-                <td>250</td>
-                <td><span class="badge bg-success badge-macro">26g</span></td>
-                <td><span class="badge bg-secondary badge-macro">0g</span></td>
-                <td><span class="badge bg-warning text-dark badge-macro">15g</span></td>
-              </tr>
-              <tr>
-                <td><strong>Muz (1 Adet Orta)</strong></td>
-                <td>105</td>
-                <td><span class="badge bg-success badge-macro">1.3g</span></td>
-                <td><span class="badge bg-primary badge-macro">27g</span></td>
-                <td><span class="badge bg-warning text-dark badge-macro">0.3g</span></td>
-              </tr>
+              <!-- Et & Tavuk & Balık -->
+              <tr><td><strong>Tavuk Göğsü (Pişmiş)</strong></td><td>100g</td><td>165</td><td><span class="badge bg-success badge-macro">31g</span></td><td><span class="badge bg-secondary badge-macro">0g</span></td><td><span class="badge bg-warning text-dark badge-macro">3.6g</span></td></tr>
+              <tr><td><strong>Biftek (Izgara)</strong></td><td>100g</td><td>250</td><td><span class="badge bg-success badge-macro">26g</span></td><td><span class="badge bg-secondary badge-macro">0g</span></td><td><span class="badge bg-warning text-dark badge-macro">15g</span></td></tr>
+              <tr><td><strong>Izgara Köfte</strong></td><td>1 Porsiyon (150g)</td><td>330</td><td><span class="badge bg-success badge-macro">24g</span></td><td><span class="badge bg-primary badge-macro">8g</span></td><td><span class="badge bg-warning text-dark badge-macro">22g</span></td></tr>
+              <tr><td><strong>Somon (Fırın)</strong></td><td>100g</td><td>206</td><td><span class="badge bg-success badge-macro">22g</span></td><td><span class="badge bg-secondary badge-macro">0g</span></td><td><span class="badge bg-warning text-dark badge-macro">12g</span></td></tr>
+              <tr><td><strong>Ton Balığı (Konserve - Suda)</strong></td><td>100g</td><td>116</td><td><span class="badge bg-success badge-macro">26g</span></td><td><span class="badge bg-secondary badge-macro">0g</span></td><td><span class="badge bg-warning text-dark badge-macro">1g</span></td></tr>
+
+              <!-- Türk Mutfağı Yemekleri -->
+              <tr><td><strong>Mercimek Çorbası</strong></td><td>1 Kase (200ml)</td><td>140</td><td><span class="badge bg-success badge-macro">7.5g</span></td><td><span class="badge bg-primary badge-macro">20g</span></td><td><span class="badge bg-warning text-dark badge-macro">3.5g</span></td></tr>
+              <tr><td><strong>Lahmacun</strong></td><td>1 Adet</td><td>220</td><td><span class="badge bg-success badge-macro">9g</span></td><td><span class="badge bg-primary badge-macro">32g</span></td><td><span class="badge bg-warning text-dark badge-macro">6g</span></td></tr>
+              <tr><td><strong>Kuru Fasulye</strong></td><td>1 Porsiyon (200g)</td><td>270</td><td><span class="badge bg-success badge-macro">14g</span></td><td><span class="badge bg-primary badge-macro">38g</span></td><td><span class="badge bg-warning text-dark badge-macro">6g</span></td></tr>
+              <tr><td><strong>Pirinç Pilavı</strong></td><td>1 Porsiyon (150g)</td><td>240</td><td><span class="badge bg-success badge-macro">4g</span></td><td><span class="badge bg-primary badge-macro">45g</span></td><td><span class="badge bg-warning text-dark badge-macro">5g</span></td></tr>
+              <tr><td><strong>Bulgur Pilavı</strong></td><td>1 Porsiyon (150g)</td><td>180</td><td><span class="badge bg-success badge-macro">5.5g</span></td><td><span class="badge bg-primary badge-macro">32g</span></td><td><span class="badge bg-warning text-dark badge-macro">3g</span></td></tr>
+              <tr><td><strong>Karnıyarık</strong></td><td>1 Adet</td><td>270</td><td><span class="badge bg-success badge-macro">8g</span></td><td><span class="badge bg-primary badge-macro">12g</span></td><td><span class="badge bg-warning text-dark badge-macro">21g</span></td></tr>
+              <tr><td><strong>Mantı (Yoğurtlu & Soslu)</strong></td><td>1 Porsiyon (200g)</td><td>420</td><td><span class="badge bg-success badge-macro">15g</span></td><td><span class="badge bg-primary badge-macro">58g</span></td><td><span class="badge bg-warning text-dark badge-macro">14g</span></td></tr>
+
+              <!-- Kahvaltılık & Temel Gıdalar -->
+              <tr><td><strong>Yumurta (Haşlanmış)</strong></td><td>1 Adet (~50g)</td><td>78</td><td><span class="badge bg-success badge-macro">6.3g</span></td><td><span class="badge bg-primary badge-macro">0.6g</span></td><td><span class="badge bg-warning text-dark badge-macro">5.3g</span></td></tr>
+              <tr><td><strong>Beyaz Peynir (Tam Yağlı)</strong></td><td>1 Dilim (30g)</td><td>93</td><td><span class="badge bg-success badge-macro">5.4g</span></td><td><span class="badge bg-primary badge-macro">0.7g</span></td><td><span class="badge bg-warning text-dark badge-macro">7.5g</span></td></tr>
+              <tr><td><strong>Süzme Yoğurt</strong></td><td>100g</td><td>97</td><td><span class="badge bg-success badge-macro">9g</span></td><td><span class="badge bg-primary badge-macro">3.6g</span></td><td><span class="badge bg-warning text-dark badge-macro">5g</span></td></tr>
+              <tr><td><strong>Yulaf Ezmesi</strong></td><td>100g</td><td>389</td><td><span class="badge bg-success badge-macro">16.9g</span></td><td><span class="badge bg-primary badge-macro">66.3g</span></td><td><span class="badge bg-warning text-dark badge-macro">6.9g</span></td></tr>
+              <tr><td><strong>Zeytinyağı</strong></td><td>1 Y.Kaşığı (10g)</td><td>88</td><td><span class="badge bg-secondary badge-macro">0g</span></td><td><span class="badge bg-secondary badge-macro">0g</span></td><td><span class="badge bg-warning text-dark badge-macro">10g</span></td></tr>
+
+              <!-- Meyveler & Kuruyemişler -->
+              <tr><td><strong>Muz</strong></td><td>1 Adet Orta</td><td>105</td><td><span class="badge bg-success badge-macro">1.3g</span></td><td><span class="badge bg-primary badge-macro">27g</span></td><td><span class="badge bg-warning text-dark badge-macro">0.3g</span></td></tr>
+              <tr><td><strong>Elma</strong></td><td>1 Adet Orta</td><td>95</td><td><span class="badge bg-success badge-macro">0.5g</span></td><td><span class="badge bg-primary badge-macro">25g</span></td><td><span class="badge bg-warning text-dark badge-macro">0.3g</span></td></tr>
+              <tr><td><strong>Çiğ Badem</strong></td><td>1 Avuç (30g)</td><td>173</td><td><span class="badge bg-success badge-macro">6.3g</span></td><td><span class="badge bg-primary badge-macro">6.3g</span></td><td><span class="badge bg-warning text-dark badge-macro">15g</span></td></tr>
+              <tr><td><strong>Ceviz İçi</strong></td><td>1 Avuç (30g)</td><td>196</td><td><span class="badge bg-success badge-macro">4.5g</span></td><td><span class="badge bg-primary badge-macro">4.1g</span></td><td><span class="badge bg-warning text-dark badge-macro">19.5g</span></td></tr>
+              <tr><td><strong>Fıstık Ezmesi (Şekersiz)</strong></td><td>1 Y.Kaşığı (15g)</td><td>94</td><td><span class="badge bg-success badge-macro">4g</span></td><td><span class="badge bg-primary badge-macro">3g</span></td><td><span class="badge bg-warning text-dark badge-macro">8g</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -105,7 +85,6 @@
   </footer>
 
   <script>
-    // Canlı Arama Fonksiyonu
     document.getElementById('searchInput').addEventListener('keyup', function() {
       let filter = this.value.toLowerCase();
       let rows = document.querySelectorAll('#foodTable tbody tr');
