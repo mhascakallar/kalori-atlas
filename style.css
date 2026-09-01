@@ -1,15 +1,144 @@
+:root {
+  --primary-dark: #1e3c72;
+  --primary: #2a5298;
+  --page-background: #f4f7fb;
+  --text-color: #1f2937;
+  --border-color: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #f8f9fa;
+  margin: 0;
+  background-color: var(--page-background);
+  color: var(--text-color);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .hero-section {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark) 0%,
+    var(--primary) 100%
+  );
   color: white;
-  padding: 50px 0;
+  padding: 48px 0 36px;
+}
+
+.hero-section h1 {
+  letter-spacing: -1px;
+}
+
+#searchInput {
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+#searchInput:focus {
+  border-color: #79a7ff;
+  box-shadow: 0 0 0 4px rgba(121, 167, 255, 0.25);
+}
+
+#categoryFilters {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+#categoryFilters .btn {
+  border-radius: 999px;
+  padding: 7px 14px;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
+}
+
+#categoryFilters .btn:hover {
+  transform: translateY(-1px);
+}
+
+.table-responsive {
+  border: 1px solid var(--border-color);
+}
+
+.table thead th {
+  white-space: nowrap;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.table tbody td {
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+.table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f0f5ff;
 }
 
 .badge-macro {
+  min-width: 48px;
   font-size: 0.85rem;
   padding: 6px 10px;
+}
+
+footer {
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 32px 0 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-section .lead {
+    padding: 0 12px;
+    font-size: 1rem;
+  }
+
+  #categoryFilters {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    overflow-x: auto;
+    padding: 4px 12px 12px;
+    scrollbar-width: thin;
+  }
+
+  #categoryFilters .btn {
+    flex: 0 0 auto;
+  }
+
+  main.container {
+    margin-top: 24px !important;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .table-responsive {
+    padding: 8px !important;
+  }
+
+  .table {
+    min-width: 900px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  #searchInput {
+    font-size: 1rem;
+  }
 }
