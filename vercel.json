@@ -3,6 +3,10 @@
     {
       "source": "/besin/:slug",
       "destination": "/api/besin?slug=:slug"
+    },
+    {
+      "source": "/sitemap-besin.xml",
+      "destination": "/api/sitemap"
     }
   ]
 }
