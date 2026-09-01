@@ -31,12 +31,19 @@ module.exports = function handler(request, response) {
       url: `${siteUrl}/hesaplayici.html`,
       priority: "0.8"
     },
-    {
-      url: `${siteUrl}/kaynaklar.html`,
-      priority: "0.7"
-    }
-  ];
-
+      {
+    url: `${siteUrl}/kaynaklar.html`,
+    priority: "0.7"
+  },
+  {
+    url: `${siteUrl}/hakkimizda.html`,
+    priority: "0.7"
+  },
+  {
+    url: `${siteUrl}/gizlilik.html`,
+    priority: "0.5"
+  }
+];
   const foodPages = foodSlugs.map((slug) => ({
     url: `${siteUrl}/besin/${slug}`,
     priority: "0.7"
