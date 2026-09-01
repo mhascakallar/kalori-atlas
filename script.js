@@ -1,4 +1,5 @@
 let foodsData = [];
+let activeCategory = "Tümü";
 
 function fixTurkishToLower(text) {
   if (!text) return "";
@@ -28,12 +29,28 @@ function renderTable(data) {
     const row = `
       <tr>
         <td><strong>${item.name}</strong></td>
-        <td><span class="badge bg-light text-dark border">${item.category}</span></td>
+        <td>
+          <span class="badge bg-light text-dark border">
+            ${item.category}
+          </span>
+        </td>
         <td>${item.portion}</td>
         <td><strong>${item.calories}</strong></td>
-        <td><span class="badge bg-success badge-macro">${item.protein}g</span></td>
-        <td><span class="badge bg-primary badge-macro">${item.carbs}g</span></td>
-        <td><span class="badge bg-warning text-dark badge-macro">${item.fat}g</span></td>
+        <td>
+          <span class="badge bg-success badge-macro">
+            ${item.protein}g
+          </span>
+        </td>
+        <td>
+          <span class="badge bg-primary badge-macro">
+            ${item.carbs}g
+          </span>
+        </td>
+        <td>
+          <span class="badge bg-warning text-dark badge-macro">
+            ${item.fat}g
+          </span>
+        </td>
       </tr>
     `;
 
@@ -41,14 +58,59 @@ function renderTable(data) {
   });
 }
 
-function filterFoods(query) {
-  const normalizedQuery = fixTurkishToLower(query.trim());
+function renderCategoryFilters() {
+  const categoryFilters = document.getElementById("categoryFilters");
 
-  return foodsData.filter((item) => {
-    const nameMatch = fixTurkishToLower(item.name).includes(normalizedQuery);
-    const categoryMatch = fixTurkishToLower(item.category).includes(normalizedQuery);
-    return nameMatch || categoryMatch;
+  const categories = [
+    "Tümü",
+    ...new Set(foodsData.map((item) => item.category))
+  ];
+
+  categoryFilters.innerHTML = "";
+
+  categories.forEach((category) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = category;
+
+    const isActive = category === activeCategory;
+
+    button.className = isActive
+      ? "btn btn-light btn-sm text-primary fw-bold"
+      : "btn btn-outline-light btn-sm";
+
+    button.addEventListener("click", () => {
+      activeCategory = category;
+      renderCategoryFilters();
+      applyFilters();
+    });
+
+    categoryFilters.appendChild(button);
   });
+}
+
+function applyFilters() {
+  const searchInput = document.getElementById("searchInput");
+  const query = fixTurkishToLower(searchInput.value.trim());
+
+  const filteredFoods = foodsData.filter((item) => {
+    const nameMatch =
+      fixTurkishToLower(item.name).includes(query);
+
+    const categorySearchMatch =
+      fixTurkishToLower(item.category).includes(query);
+
+    const searchMatch =
+      nameMatch || categorySearchMatch;
+
+    const categoryMatch =
+      activeCategory === "Tümü" ||
+      item.category === activeCategory;
+
+    return searchMatch && categoryMatch;
+  });
+
+  renderTable(filteredFoods);
 }
 
 async function loadFoods() {
@@ -62,9 +124,12 @@ async function loadFoods() {
     }
 
     foodsData = await response.json();
-    renderTable(foodsData);
+
+    renderCategoryFilters();
+    applyFilters();
   } catch (error) {
     console.error(error);
+
     resultsBody.innerHTML = `
       <tr>
         <td colspan="7" class="text-center text-danger py-4">
@@ -75,8 +140,8 @@ async function loadFoods() {
   }
 }
 
-document.getElementById("searchInput").addEventListener("input", (event) => {
-  renderTable(filterFoods(event.target.value));
-});
+document
+  .getElementById("searchInput")
+  .addEventListener("input", applyFilters);
 
 loadFoods();
