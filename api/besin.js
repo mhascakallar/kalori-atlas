@@ -378,6 +378,45 @@ module.exports = function handler(request, response) {
             grid-template-columns: 1fr;
           }
         }
+                .faq-card {
+          padding: 28px;
+          background: white;
+          border: 1px solid #e5e7eb;
+          border-radius: 18px;
+          box-shadow: 0 12px 30px rgba(30, 60, 114, 0.1);
+        }
+
+        .faq-card details {
+          border-top: 1px solid #e5e7eb;
+        }
+
+        .faq-card details:last-child {
+          border-bottom: 1px solid #e5e7eb;
+        }
+
+        .faq-card summary {
+          padding: 17px 4px;
+          color: #1f2937;
+          font-weight: 700;
+          cursor: pointer;
+        }
+
+        .faq-card details[open] summary {
+          color: #1e3c72;
+        }
+
+        .faq-card details p {
+          margin: 0;
+          padding: 0 4px 18px;
+          color: #4b5563;
+          line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+          .faq-card {
+            padding: 20px;
+          }
+        }
       </style>
 
       <script type="application/ld+json">
@@ -485,6 +524,45 @@ module.exports = function handler(request, response) {
               Değerler kullanılan ürün ve hazırlanma yöntemine göre
               değişiklik gösterebilir.
             </p>
+          </section>
+                    <section class="faq-card mt-4">
+            <h2 class="h4 mb-3">
+              ${safeName} hakkında sık sorulan sorular
+            </h2>
+
+            <details open>
+              <summary>
+                ${safeName} kaç kalori?
+              </summary>
+
+              <p>
+                ${safePortion} ${safeName},
+                <strong>${food.calories} kcal</strong> içerir.
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                ${safeName} ne kadar protein içerir?
+              </summary>
+
+              <p>
+                ${safePortion} ${safeName},
+                <strong>${food.protein} gram protein</strong> içerir.
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                ${safeName} karbonhidrat ve yağ miktarı nedir?
+              </summary>
+
+              <p>
+                ${safePortion} ${safeName},
+                <strong>${food.carbs} gram karbonhidrat</strong> ve
+                <strong>${food.fat} gram yağ</strong> içerir.
+              </p>
+            </details>
           </section>
                     <section class="related-foods-card mt-4">
             <h2 class="h4 mb-3">
