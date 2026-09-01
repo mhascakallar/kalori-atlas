@@ -22,7 +22,7 @@ module.exports = function handler(request, response) {
     )
   ];
 
-  const staticPages = [
+   const staticPages = [
     {
       url: `${siteUrl}/`,
       priority: "1.0"
@@ -30,6 +30,10 @@ module.exports = function handler(request, response) {
     {
       url: `${siteUrl}/hesaplayici.html`,
       priority: "0.8"
+    },
+    {
+      url: `${siteUrl}/kaynaklar.html`,
+      priority: "0.7"
     }
   ];
 
