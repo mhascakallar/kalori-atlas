@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Tavuk Göğsü (Pişmiş)",
+    "category": "Et & Tavuk",
+    "portion": "100g",
+    "calories": 165,
+    "protein": 31.0,
+    "carbs": 0.0,
+    "fat": 3.6
+  },
+  {
+    "name": "Izgara Köfte",
+    "category": "Et & Tavuk",
+    "portion": "1 Porsiyon (150g)",
+    "calories": 330,
+    "protein": 24.0,
+    "carbs": 8.0,
+    "fat": 22.0
+  },
+  {
+    "name": "Mercimek Çorbası",
+    "category": "Çorbalar",
+    "portion": "1 Kase (200ml)",
+    "calories": 140,
+    "protein": 7.5,
+    "carbs": 20.0,
+    "fat": 3.5
+  },
+  {
+    "name": "Lahmacun",
+    "category": "Türk Mutfağı",
+    "portion": "1 Adet",
+    "calories": 220,
+    "protein": 9.0,
+    "carbs": 32.0,
+    "fat": 6.0
+  },
+  {
+    "name": "Pirinç Pilavı",
+    "category": "Yemekler",
+    "portion": "1 Porsiyon (150g)",
+    "calories": 240,
+    "protein": 4.0,
+    "carbs": 45.0,
+    "fat": 5.0
+  },
+  {
+    "name": "Yumurta (Haşlanmış)",
+    "category": "Kahvaltılık",
+    "portion": "1 Adet (~50g)",
+    "calories": 78,
+    "protein": 6.3,
+    "carbs": 0.6,
+    "fat": 5.3
+  },
+  {
+    "name": "Muz",
+    "category": "Meyve",
+    "portion": "1 Adet Orta",
+    "calories": 105,
+    "protein": 1.3,
+    "carbs": 27.0,
+    "fat": 0.3
+  }
+]
