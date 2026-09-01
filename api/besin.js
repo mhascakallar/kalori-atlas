@@ -626,19 +626,25 @@ module.exports = function handler(request, response) {
         </article>
       </main>
 
-      <footer class="text-center py-4 text-muted border-top">
-        <p class="mb-0">
-          © 2026 Kalori Atlası — Tüm Hakları Saklıdır.
-        </p>
-                <div class="mt-2">
-          <a
-            href="/kaynaklar.html"
-            class="text-muted"
-          >
-            Kaynaklar ve Metodoloji
-          </a>
-        </div>
-      </footer>
+     <footer class="text-center py-4 text-muted border-top">
+  <p class="mb-0">
+    © 2026 Kalori Atlası — Tüm Hakları Saklıdır.
+  </p>
+
+  <div class="mt-2">
+    <a href="/hakkimizda.html" class="text-muted me-3">
+      Hakkımızda
+    </a>
+
+    <a href="/kaynaklar.html" class="text-muted me-3">
+      Kaynaklar ve Metodoloji
+    </a>
+
+    <a href="/gizlilik.html" class="text-muted">
+      Gizlilik Politikası
+    </a>
+  </div>
+</footer>
 
       ${calculatorScript}
     </body>
