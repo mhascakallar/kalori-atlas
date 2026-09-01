@@ -630,6 +630,14 @@ module.exports = function handler(request, response) {
         <p class="mb-0">
           © 2026 Kalori Atlası — Tüm Hakları Saklıdır.
         </p>
+                <div class="mt-2">
+          <a
+            href="/kaynaklar.html"
+            class="text-muted"
+          >
+            Kaynaklar ve Metodoloji
+          </a>
+        </div>
       </footer>
 
       ${calculatorScript}
