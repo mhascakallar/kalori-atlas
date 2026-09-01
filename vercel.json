@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/besin/:slug",
+      "destination": "/api/besin?slug=:slug"
+    }
+  ]
+}
