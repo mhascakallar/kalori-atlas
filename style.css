@@ -1,0 +1,15 @@
+body {
+  background-color: #f8f9fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 50px 0;
+}
+
+.badge-macro {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+}
