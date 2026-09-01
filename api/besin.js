@@ -417,6 +417,29 @@ module.exports = function handler(request, response) {
             padding: 20px;
           }
         }
+                .food-breadcrumb {
+          display: flex;
+          margin-bottom: 16px;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 8px;
+          color: #667085;
+          font-size: 0.95rem;
+        }
+
+        .food-breadcrumb a {
+          color: #2a5298;
+          font-weight: 600;
+          text-decoration: none;
+        }
+
+        .food-breadcrumb a:hover {
+          text-decoration: underline;
+        }
+
+        .food-breadcrumb strong {
+          color: #1f2937;
+        }
       </style>
 
       <script type="application/ld+json">
@@ -426,6 +449,23 @@ module.exports = function handler(request, response) {
           name: `${food.name} Kaç Kalori?`,
           url: canonicalUrl,
           description,
+                    breadcrumb: {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Kalori Atlası",
+                item: "https://www.kaloriatlas.com/"
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: food.name,
+                item: canonicalUrl
+              }
+            ]
+          },
           mainEntity: {
             "@type": "NutritionInformation",
             calories: `${food.calories} kcal`,
@@ -459,6 +499,16 @@ module.exports = function handler(request, response) {
       </header>
 
       <main class="container food-page">
+              <nav
+          class="food-breadcrumb"
+          aria-label="Sayfa yolu"
+        >
+          <a href="/">Kalori Atlası</a>
+          <span aria-hidden="true">›</span>
+          <span>${safeCategory}</span>
+          <span aria-hidden="true">›</span>
+          <strong>${safeName}</strong>
+        </nav>
         <article>
           <section class="food-card">
             <span class="food-category">
