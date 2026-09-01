@@ -802,7 +802,7 @@
   },
   {
     "name": "Chia Tohumu",
-    "category": "Süper Gıda",
+    "category": "Kuruyemiş",
     "portion": "1 Yemek Kaşığı (12g)",
     "calories": 58,
     "protein": 2,
@@ -811,7 +811,7 @@
   },
   {
     "name": "Keten Tohumu",
-    "category": "Süper Gıda",
+    "category": "Kuruyemiş",
     "portion": "1 Yemek Kaşığı (10g)",
     "calories": 53,
     "protein": 1.8,
@@ -1135,7 +1135,7 @@
   },
   {
     "name": "Tahin",
-    "category": "Tatlı / Yağ",
+    "category": "Kahvaltılık",
     "portion": "1 Tatlı Kaşığı (10g)",
     "calories": 60,
     "protein": 1.8,
@@ -1459,7 +1459,7 @@
   },
   {
     "name": "Bezelye (Haşlanmış)",
-    "category": "Bakliyat",
+    "category": "Tahıl & Bakliyat",
     "portion": "100 g",
     "calories": 84,
     "protein": 5.4,
@@ -1468,7 +1468,7 @@
   },
   {
     "name": "Börülce",
-    "category": "Bakliyat",
+    "category": "Tahıl & Bakliyat",
     "portion": "100 g",
     "calories": 118,
     "protein": 8,
@@ -1477,7 +1477,7 @@
   },
   {
     "name": "Soya Fasulyesi",
-    "category": "Bakliyat",
+    "category": "Tahıl & Bakliyat",
     "portion": "100 g",
     "calories": 172,
     "protein": 16.6,
