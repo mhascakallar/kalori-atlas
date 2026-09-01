@@ -89,7 +89,27 @@ module.exports = function handler(request, response) {
     `ve ${food.fat} g yağ içerir.`;
 
   const baseWeight = getBaseWeight(food.portion);
+  const relatedFoods = foods
+    .filter(
+      (item) =>
+        item.category === food.category &&
+        slugify(item.name) !== requestedSlug
+    )
+    .slice(0, 6);
 
+  const relatedFoodsHtml = relatedFoods
+    .map(
+      (item) => `
+        <a
+          href="/besin/${slugify(item.name)}"
+          class="related-food-link"
+        >
+          <span>${escapeHtml(item.name)}</span>
+          <strong>${item.calories} kcal</strong>
+        </a>
+      `
+    )
+    .join("");
   const quantityCalculator = baseWeight
     ? `
       <section class="quantity-card mt-4">
@@ -308,6 +328,56 @@ module.exports = function handler(request, response) {
             grid-template-columns: repeat(2, 1fr);
           }
         }
+                .related-foods-card {
+          padding: 28px;
+          background: white;
+          border: 1px solid #e5e7eb;
+          border-radius: 18px;
+          box-shadow: 0 12px 30px rgba(30, 60, 114, 0.1);
+        }
+
+        .related-foods-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+
+        .related-food-link {
+          display: flex;
+          padding: 14px 16px;
+          align-items: center;
+          justify-content: space-between;
+          gap: 15px;
+          color: #1f2937;
+          background: #f7f9fd;
+          border: 1px solid #e1e7f1;
+          border-radius: 12px;
+          text-decoration: none;
+          transition:
+            transform 0.15s ease,
+            border-color 0.15s ease;
+        }
+
+        .related-food-link:hover {
+          color: #1e3c72;
+          border-color: #9fb5dd;
+          transform: translateY(-1px);
+        }
+
+        .related-food-link strong {
+          flex: 0 0 auto;
+          color: #1e3c72;
+        }
+
+        @media (max-width: 600px) {
+          .related-foods-card {
+            padding: 20px;
+          }
+
+          .related-foods-grid {
+            grid-template-columns: 1fr;
+          }
+        }
       </style>
 
       <script type="application/ld+json">
@@ -415,6 +485,15 @@ module.exports = function handler(request, response) {
               Değerler kullanılan ürün ve hazırlanma yöntemine göre
               değişiklik gösterebilir.
             </p>
+          </section>
+                    <section class="related-foods-card mt-4">
+            <h2 class="h4 mb-3">
+              Benzer ${safeCategory} besinleri
+            </h2>
+
+            <div class="related-foods-grid">
+              ${relatedFoodsHtml}
+            </div>
           </section>
         </article>
       </main>
