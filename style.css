@@ -142,3 +142,19 @@ footer {
     font-size: 1rem;
   }
 }
+.food-name-link {
+  color: #172033;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.food-name-link:hover {
+  color: #2a5298;
+  text-decoration: underline;
+}
+
+.food-name-link:focus-visible {
+  outline: 3px solid rgba(42, 82, 152, 0.25);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
