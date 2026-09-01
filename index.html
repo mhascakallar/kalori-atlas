@@ -3,27 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kalori Atlası - Geniş Besin Veritabanı</title>
+  <title>Kalori Atlası - Besin Rehberi</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     .hero-section { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 60px 0; }
-    .card { border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
     .badge-macro { font-size: 0.85rem; padding: 6px 10px; }
-    .loading-spinner { display: none; }
   </style>
 </head>
 <body>
 
-  <!-- Hero & Arama -->
   <header class="hero-section text-center">
     <div class="container">
       <h1 class="display-4 fw-bold">Kalori Atlası</h1>
-      <p class="lead">Binlerce yiyeceğin kalori ve makro değerlerini anında arayın.</p>
+      <p class="lead">Özel veritabanımızdan besin değerlerini hızlıca arayın.</p>
       <div class="row justify-content-center mt-4">
         <div class="col-md-6">
-          <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="Besin adı yazın (Örn: Elma, Tavuk, Peynir)..." autocomplete="off">
-          <small class="text-white-50 mt-2 d-block">Arama yapmak için en az 2 karakter yazın.</small>
+          <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="Besin adı yazın (Örn: Köfte, Yumurta, Muz)..." autocomplete="off">
         </div>
       </div>
     </div>
@@ -32,18 +28,13 @@
   <main class="container my-5">
     <div class="row mb-5">
       <div class="col-12">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h3 class="fw-bold mb-0">Arama Sonuçları</h3>
-          <div class="spinner-border text-primary loading-spinner" id="loadingSpinner" role="status">
-            <span class="visually-hidden">Yükleniyor...</span>
-          </div>
-        </div>
         <div class="table-responsive bg-white p-3 rounded shadow-sm">
           <table class="table table-hover align-middle mb-0">
             <thead class="table-light">
               <tr>
                 <th>Besin Adı</th>
-                <th>Miktar (100g)</th>
+                <th>Kategori</th>
+                <th>Miktar / Porsiyon</th>
                 <th>Kalori (kcal)</th>
                 <th>Protein (g)</th>
                 <th>Karbonhidrat (g)</th>
@@ -52,7 +43,7 @@
             </thead>
             <tbody id="resultsBody">
               <tr>
-                <td colspan="6" class="text-center text-muted py-4">Arama yapmak için yukarıdaki kutuya bir besin adı yazın.</td>
+                <td colspan="7" class="text-center text-muted py-4">Veriler yükleniyor...</td>
               </tr>
             </tbody>
           </table>
@@ -66,63 +57,49 @@
   </footer>
 
   <script>
-    let timeoutId = null;
+    let foodsData = [];
 
-    document.getElementById('searchInput').addEventListener('input', function() {
-      const query = this.value.trim();
+    // foods.json dosyasından verileri çekme
+    fetch('foods.json')
+      .then(response => response.json())
+      .then(data => {
+        foodsData = data;
+        renderTable(foodsData);
+      })
+      .catch(err => {
+        document.getElementById('resultsBody').innerHTML = '<tr><td colspan="7" class="text-center text-danger py-4">Veri yüklenirken bir hata oluştu.</td></tr>';
+      });
+
+    function renderTable(data) {
       const resultsBody = document.getElementById('resultsBody');
-      const spinner = document.getElementById('loadingSpinner');
+      resultsBody.innerHTML = '';
 
-      clearTimeout(timeoutId);
-
-      if (query.length < 2) {
-        resultsBody.innerHTML = '<tr><td colspan="6" class="text-center text-muted py-4">Arama yapmak için yukarıdaki kutuya bir besin adı yazın.</td></tr>';
-        spinner.style.display = 'none';
+      if (data.length === 0) {
+        resultsBody.innerHTML = '<tr><td colspan="7" class="text-center text-muted py-4">Sonuç bulunamadı.</td></tr>';
         return;
       }
 
-      spinner.style.display = 'inline-block';
+      data.forEach(item => {
+        const row = `
+          <tr>
+            <td><strong>${item.name}</strong></td>
+            <td><span class="badge bg-light text-dark border">${item.category || 'Genel'}</span></td>
+            <td>${item.portion}</td>
+            <td>${item.calories}</td>
+            <td><span class="badge bg-success badge-macro">${item.protein}g</span></td>
+            <td><span class="badge bg-primary badge-macro">${item.carbs}g</span></td>
+            <td><span class="badge bg-warning text-dark badge-macro">${item.fat}g</span></td>
+          </tr>
+        `;
+        resultsBody.innerHTML += row;
+      });
+    }
 
-      // Yazma bittikten 400ms sonra API isteği at (Gereksiz istekleri önler)
-      timeoutId = setTimeout(() => {
-        fetch(`https://world.openfoodfacts.org/cgi/search.pl?search_terms=${encodeURIComponent(query)}&search_simple=1&action=process&json=1&page_size=20`)
-          .then(response => response.json())
-          .then(data => {
-            spinner.style.display = 'none';
-            resultsBody.innerHTML = '';
-
-            if (!data.products || data.products.length === 0) {
-              resultsBody.innerHTML = '<tr><td colspan="6" class="text-center text-muted py-4">Sonuç bulunamadı. Farklı bir arama terimi deneyin.</td></tr>';
-              return;
-            }
-
-            data.products.forEach(product => {
-              const name = product.product_name_tr || product.product_name || 'Bilinmeyen Besin';
-              const nutriments = product.nutriments || {};
-              
-              const energy = Math.round(nutriments['energy-kcal_100g'] || nutriments['energy-kcal'] || 0);
-              const protein = (nutriments.proteins_100g || 0).toFixed(1);
-              const carbs = (nutriments.carbohydrates_100g || 0).toFixed(1);
-              const fat = (nutriments.fat_100g || 0).toFixed(1);
-
-              const row = `
-                <tr>
-                  <td><strong>${name}</strong></td>
-                  <td>100g</td>
-                  <td>${energy}</td>
-                  <td><span class="badge bg-success badge-macro">${protein}g</span></td>
-                  <td><span class="badge bg-primary badge-macro">${carbs}g</span></td>
-                  <td><span class="badge bg-warning text-dark badge-macro">${fat}g</span></td>
-                </tr>
-              `;
-              resultsBody.innerHTML += row;
-            });
-          })
-          .catch(err => {
-            spinner.style.display = 'none';
-            resultsBody.innerHTML = '<tr><td colspan="6" class="text-center text-danger py-4">Veriler çekilirken bir hata oluştu. Lütfen tekrar deneyin.</td></tr>';
-          });
-      }, 400);
+    // Anlık arama filtresi
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const query = this.value.toLowerCase().trim();
+      const filtered = foodsData.filter(item => item.name.toLowerCase().includes(query) || (item.category && item.category.toLowerCase().includes(query)));
+      renderTable(filtered);
     });
   </script>
 </body>
