@@ -1,6 +1,14 @@
 let foodsData = [];
 let activeCategory = "Tümü";
-
+function slugify(text) {
+  return text
+    .toLocaleLowerCase("tr-TR")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ı/g, "i")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
 function fixTurkishToLower(text) {
   if (!text) return "";
 
@@ -28,7 +36,14 @@ function renderTable(data) {
   data.forEach((item) => {
     const row = `
       <tr>
-        <td><strong>${item.name}</strong></td>
+               <td>
+          <a
+            href="/besin/${slugify(item.name)}"
+            class="food-name-link"
+          >
+            <strong>${item.name}</strong>
+          </a>
+        </td>
         <td>
           <span class="badge bg-light text-dark border">
             ${item.category}
