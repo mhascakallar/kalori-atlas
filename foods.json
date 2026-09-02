@@ -1888,5 +1888,365 @@
   "protein": 4,
   "carbs": 32,
   "fat": 8
+},
+  {
+  "name": "Tas Kebabı",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 360,
+  "protein": 28,
+  "carbs": 18,
+  "fat": 19
+},
+{
+  "name": "Orman Kebabı",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 330,
+  "protein": 25,
+  "carbs": 22,
+  "fat": 16
+},
+{
+  "name": "İzmir Köfte",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 430,
+  "protein": 25,
+  "carbs": 35,
+  "fat": 21
+},
+{
+  "name": "Kadınbudu Köfte",
+  "category": "Ev Yemeği",
+  "portion": "2 Adet (180g)",
+  "calories": 390,
+  "protein": 24,
+  "carbs": 22,
+  "fat": 23
+},
+{
+  "name": "Hasanpaşa Köfte",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 440,
+  "protein": 27,
+  "carbs": 32,
+  "fat": 23
+},
+{
+  "name": "Sulu Köfte",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 340,
+  "protein": 21,
+  "carbs": 28,
+  "fat": 16
+},
+{
+  "name": "Patates Oturtma",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 380,
+  "protein": 18,
+  "carbs": 38,
+  "fat": 17
+},
+{
+  "name": "Kıymalı Patates Yemeği",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 360,
+  "protein": 20,
+  "carbs": 35,
+  "fat": 16
+},
+{
+  "name": "Tavuk Sote",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 300,
+  "protein": 36,
+  "carbs": 15,
+  "fat": 11
+},
+{
+  "name": "Et Sote",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 370,
+  "protein": 34,
+  "carbs": 12,
+  "fat": 21
+},
+{
+  "name": "Tavuk Haşlama",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 310,
+  "protein": 35,
+  "carbs": 22,
+  "fat": 9
+},
+{
+  "name": "Fırında Tavuk ve Patates",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (350g)",
+  "calories": 480,
+  "protein": 39,
+  "carbs": 38,
+  "fat": 19
+},
+{
+  "name": "Tavuklu Bezelye Yemeği",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 340,
+  "protein": 29,
+  "carbs": 34,
+  "fat": 10
+},
+{
+  "name": "Etli Bamya Yemeği",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 260,
+  "protein": 19,
+  "carbs": 20,
+  "fat": 12
+},
+{
+  "name": "Zeytinyağlı Bamya",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 180,
+  "protein": 5,
+  "carbs": 23,
+  "fat": 8
+},
+{
+  "name": "Etli Taze Fasulye",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 270,
+  "protein": 20,
+  "carbs": 20,
+  "fat": 12
+},
+{
+  "name": "Etli Türlü",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 320,
+  "protein": 21,
+  "carbs": 27,
+  "fat": 14
+},
+{
+  "name": "Kabak Dolması",
+  "category": "Ev Yemeği",
+  "portion": "2 Adet (300g)",
+  "calories": 340,
+  "protein": 16,
+  "carbs": 42,
+  "fat": 12
+},
+{
+  "name": "Biber Dolması",
+  "category": "Ev Yemeği",
+  "portion": "2 Adet (250g)",
+  "calories": 310,
+  "protein": 10,
+  "carbs": 46,
+  "fat": 10
+},
+{
+  "name": "Patlıcan Dolması",
+  "category": "Ev Yemeği",
+  "portion": "2 Adet (300g)",
+  "calories": 370,
+  "protein": 16,
+  "carbs": 42,
+  "fat": 15
+},
+{
+  "name": "Lahana Sarması",
+  "category": "Ev Yemeği",
+  "portion": "6 Adet (250g)",
+  "calories": 320,
+  "protein": 17,
+  "carbs": 38,
+  "fat": 11
+},
+{
+  "name": "Pazı Sarması",
+  "category": "Ev Yemeği",
+  "portion": "6 Adet (250g)",
+  "calories": 300,
+  "protein": 15,
+  "carbs": 37,
+  "fat": 10
+},
+{
+  "name": "Etli Yaprak Sarması",
+  "category": "Ev Yemeği",
+  "portion": "8 Adet (200g)",
+  "calories": 300,
+  "protein": 14,
+  "carbs": 34,
+  "fat": 12
+},
+{
+  "name": "Kıymalı Ispanak Yemeği",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 240,
+  "protein": 18,
+  "carbs": 14,
+  "fat": 13
+},
+{
+  "name": "Yumurtalı Ispanak",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 230,
+  "protein": 15,
+  "carbs": 10,
+  "fat": 15
+},
+{
+  "name": "Zeytinyağlı Enginar",
+  "category": "Ev Yemeği",
+  "portion": "1 Adet (250g)",
+  "calories": 230,
+  "protein": 5,
+  "carbs": 28,
+  "fat": 11
+},
+{
+  "name": "Zeytinyağlı Kereviz",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 210,
+  "protein": 4,
+  "carbs": 29,
+  "fat": 9
+},
+{
+  "name": "Kapuska Yemeği",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 170,
+  "protein": 5,
+  "carbs": 24,
+  "fat": 6
+},
+{
+  "name": "Etli Kapuska",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 290,
+  "protein": 21,
+  "carbs": 24,
+  "fat": 12
+},
+{
+  "name": "Karnabahar Yemeği",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 180,
+  "protein": 7,
+  "carbs": 22,
+  "fat": 7
+},
+{
+  "name": "Fırında Karnabahar",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 260,
+  "protein": 14,
+  "carbs": 22,
+  "fat": 13
+},
+{
+  "name": "Brokoli Yemeği",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 170,
+  "protein": 8,
+  "carbs": 22,
+  "fat": 6
+},
+{
+  "name": "Mantarlı Tavuk",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 310,
+  "protein": 39,
+  "carbs": 10,
+  "fat": 13
+},
+{
+  "name": "Sebzeli Güveç",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 240,
+  "protein": 7,
+  "carbs": 30,
+  "fat": 10
+},
+{
+  "name": "Etli Güveç",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 390,
+  "protein": 29,
+  "carbs": 24,
+  "fat": 20
+},
+{
+  "name": "Hünkar Beğendi",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 460,
+  "protein": 28,
+  "carbs": 25,
+  "fat": 28
+},
+{
+  "name": "Ali Nazik Kebabı",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 430,
+  "protein": 30,
+  "carbs": 18,
+  "fat": 27
+},
+{
+  "name": "Etli Patlıcan Yemeği",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (300g)",
+  "calories": 330,
+  "protein": 22,
+  "carbs": 22,
+  "fat": 17
+},
+{
+  "name": "Kuru Köfte",
+  "category": "Ev Yemeği",
+  "portion": "5 Adet (150g)",
+  "calories": 360,
+  "protein": 27,
+  "carbs": 12,
+  "fat": 23
+},
+{
+  "name": "Dalyan Köfte",
+  "category": "Ev Yemeği",
+  "portion": "1 Dilim (200g)",
+  "calories": 400,
+  "protein": 30,
+  "carbs": 18,
+  "fat": 23
 }
 ]
