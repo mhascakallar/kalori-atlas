@@ -645,7 +645,7 @@ module.exports = function handler(request, response) {
     </a>
   </div>
 </footer>
-
+<script src="/analytics.js"></script>
       ${calculatorScript}
     </body>
     </html>
