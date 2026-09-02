@@ -436,7 +436,7 @@
 
   async function loadFoods() {
     try {
-      const response = await fetch("foods.json?v=3");
+      const response = await fetch("foods.json?v=4");
 
       if (!response.ok) {
         throw new Error("Besin verileri alınamadı.");
