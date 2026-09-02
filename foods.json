@@ -1798,5 +1798,95 @@
     "protein": 20,
     "carbs": 18,
     "fat": 6
-  }
+  },
+  {
+  "name": "Etli Nohut Yemeği",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 360,
+  "protein": 20,
+  "carbs": 42,
+  "fat": 12
+},
+{
+  "name": "Yeşil Mercimek Yemeği",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 280,
+  "protein": 16,
+  "carbs": 42,
+  "fat": 6
+},
+{
+  "name": "Sebzeli Türlü",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 180,
+  "protein": 5,
+  "carbs": 25,
+  "fat": 7
+},
+{
+  "name": "İmam Bayıldı",
+  "category": "Ev Yemeği",
+  "portion": "1 Adet (200g)",
+  "calories": 260,
+  "protein": 4,
+  "carbs": 20,
+  "fat": 18
+},
+{
+  "name": "Patlıcan Musakka",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 350,
+  "protein": 18,
+  "carbs": 22,
+  "fat": 21
+},
+{
+  "name": "Kıymalı Kabak Yemeği",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 230,
+  "protein": 14,
+  "carbs": 15,
+  "fat": 12
+},
+{
+  "name": "Zeytinyağlı Taze Fasulye",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 190,
+  "protein": 5,
+  "carbs": 24,
+  "fat": 8
+},
+{
+  "name": "Bezelye Yemeği",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 280,
+  "protein": 13,
+  "carbs": 38,
+  "fat": 8
+},
+{
+  "name": "Barbunya Pilaki",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (200g)",
+  "calories": 290,
+  "protein": 12,
+  "carbs": 42,
+  "fat": 8
+},
+{
+  "name": "Zeytinyağlı Pırasa",
+  "category": "Ev Yemeği",
+  "portion": "1 Porsiyon (250g)",
+  "calories": 220,
+  "protein": 4,
+  "carbs": 32,
+  "fat": 8
+}
 ]
