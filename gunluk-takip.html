@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="google-adsense-account"
+    content="ca-pub-2193918656039500"
+  >
+
+  <title>Günlük Beslenme Takibi | Kalori Atlası</title>
+
+  <meta
+    name="description"
+    content="Günlük tükettiğiniz besinleri ekleyin; kalori, protein, karbonhidrat ve yağ hedeflerinizden ne kadar kaldığını takip edin."
+  >
+
+  <link
+    rel="canonical"
+    href="https://www.kaloriatlas.com/gunluk-takip.html"
+  >
+
+  <link rel="stylesheet" href="gunluk-takip.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="/" class="site-name">
+      Kalori Atlası
+    </a>
+
+    <a href="/" class="back-link">
+      Besin Tablosuna Dön
+    </a>
+  </header>
+
+  <main class="tracker-container">
+    <section class="intro-card">
+      <div>
+        <span class="page-label">Günlük Takip</span>
+
+        <h1>Günlük Beslenme Takibi</h1>
+
+        <p>
+          Gün içerisinde tükettiğiniz besinleri ekleyin. Kalori ve
+          makro hedeflerinizden ne kadarını tamamladığınızı görün.
+        </p>
+      </div>
+
+      <button id="reset-day-button" class="secondary-button" type="button">
+        Günü Sıfırla
+      </button>
+    </section>
+
+    <section class="section-card">
+      <div class="section-heading">
+        <div>
+          <h2>Günlük hedeflerin</h2>
+
+          <p>
+            Günlük almanız gereken değerleri aşağıdaki alanlara yazın.
+          </p>
+        </div>
+      </div>
+
+      <form id="target-form" class="target-grid">
+        <label>
+          Kalori hedefi
+          <span class="input-with-unit">
+            <input
+              id="target-calories"
+              type="number"
+              min="0"
+              step="1"
+              placeholder="2500"
+              required
+            >
+            <span>kcal</span>
+          </span>
+        </label>
+
+        <label>
+          Protein hedefi
+          <span class="input-with-unit">
+            <input
+              id="target-protein"
+              type="number"
+              min="0"
+              step="1"
+              placeholder="180"
+              required
+            >
+            <span>g</span>
+          </span>
+        </label>
+
+        <label>
+          Karbonhidrat hedefi
+          <span class="input-with-unit">
+            <input
+              id="target-carbs"
+              type="number"
+              min="0"
+              step="1"
+              placeholder="280"
+              required
+            >
+            <span>g</span>
+          </span>
+        </label>
+
+        <label>
+          Yağ hedefi
+          <span class="input-with-unit">
+            <input
+              id="target-fat"
+              type="number"
+              min="0"
+              step="1"
+              placeholder="75"
+              required
+            >
+            <span>g</span>
+          </span>
+        </label>
+
+        <button class="primary-button save-target-button" type="submit">
+          Hedefleri Kaydet
+        </button>
+      </form>
+    </section>
+
+    <section class="summary-grid" aria-label="Günlük beslenme özeti">
+      <article class="summary-card calories-card">
+        <div class="summary-title">
+          <span>Kalori</span>
+          <strong id="calories-percent">%0</strong>
+        </div>
+
+        <div class="progress-track">
+          <div id="calories-progress" class="progress-value"></div>
+        </div>
+
+        <div class="summary-values">
+          <p>
+            Alınan
+            <strong id="calories-consumed">0 kcal</strong>
+          </p>
+
+          <p>
+            Kalan
+            <strong id="calories-remaining">0 kcal</strong>
+          </p>
+        </div>
+      </article>
+
+      <article class="summary-card protein-card">
+        <div class="summary-title">
+          <span>Protein</span>
+          <strong id="protein-percent">%0</strong>
+        </div>
+
+        <div class="progress-track">
+          <div id="protein-progress" class="progress-value"></div>
+        </div>
+
+        <div class="summary-values">
+          <p>
+            Alınan
+            <strong id="protein-consumed">0 g</strong>
+          </p>
+
+          <p>
+            Kalan
+            <strong id="protein-remaining">0 g</strong>
+          </p>
+        </div>
+      </article>
+
+      <article class="summary-card carbs-card">
+        <div class="summary-title">
+          <span>Karbonhidrat</span>
+          <strong id="carbs-percent">%0</strong>
+        </div>
+
+        <div class="progress-track">
+          <div id="carbs-progress" class="progress-value"></div>
+        </div>
+
+        <div class="summary-values">
+          <p>
+            Alınan
+            <strong id="carbs-consumed">0 g</strong>
+          </p>
+
+          <p>
+            Kalan
+            <strong id="carbs-remaining">0 g</strong>
+          </p>
+        </div>
+      </article>
+
+      <article class="summary-card fat-card">
+        <div class="summary-title">
+          <span>Yağ</span>
+          <strong id="fat-percent">%0</strong>
+        </div>
+
+        <div class="progress-track">
+          <div id="fat-progress" class="progress-value"></div>
+        </div>
+
+        <div class="summary-values">
+          <p>
+            Alınan
+            <strong id="fat-consumed">0 g</strong>
+          </p>
+
+          <p>
+            Kalan
+            <strong id="fat-remaining">0 g</strong>
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-card">
+      <div class="section-heading">
+        <div>
+          <h2>Besin ekle</h2>
+
+          <p>
+            Tükettiğiniz besini, öğünü ve gram miktarını seçin.
+          </p>
+        </div>
+      </div>
+
+      <form id="food-form" class="food-form">
+        <label>
+          Öğün
+          <select id="meal-select">
+            <option value="Kahvaltı">Kahvaltı</option>
+            <option value="Öğle Yemeği">Öğle Yemeği</option>
+            <option value="Akşam Yemeği">Akşam Yemeği</option>
+            <option value="Ara Öğün">Ara Öğün</option>
+          </select>
+        </label>
+
+        <label class="food-search-field">
+          Besin
+          <input
+            id="food-search"
+            type="text"
+            list="food-options"
+            placeholder="Örneğin: Muz"
+            autocomplete="off"
+            required
+          >
+          <datalist id="food-options"></datalist>
+        </label>
+
+        <label>
+          Miktar
+          <span class="input-with-unit">
+            <input
+              id="food-amount"
+              type="number"
+              min="1"
+              step="1"
+              value="100"
+              required
+            >
+            <span>g</span>
+          </span>
+        </label>
+
+        <button class="primary-button add-food-button" type="submit">
+          Günlüğe Ekle
+        </button>
+      </form>
+
+      <p id="form-message" class="form-message" aria-live="polite"></p>
+    </section>
+
+    <section class="section-card">
+      <div class="section-heading diary-heading">
+        <div>
+          <h2>Bugünün günlüğü</h2>
+
+          <p id="diary-date"></p>
+        </div>
+
+        <strong id="entry-count">0 besin</strong>
+      </div>
+
+      <div id="empty-diary" class="empty-diary">
+        Henüz besin eklemediniz.
+      </div>
+
+      <div id="diary-list" class="diary-list"></div>
+    </section>
+
+    <section class="information-note">
+      <strong>Bilgilendirme:</strong>
+      Hesaplanan değerler yaklaşık değerlerdir. Tıbbi veya kişisel
+      beslenme önerisi yerine geçmez.
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Kalori Atlası — Tüm Hakları Saklıdır.</p>
+
+    <div>
+      <a href="/">Ana Sayfa</a>
+      <a href="/hesaplayici.html">Kalori Hesaplayıcı</a>
+      <a href="/hakkimizda.html">Hakkımızda</a>
+      <a href="/kaynaklar.html">Kaynaklar</a>
+      <a href="/gizlilik.html">Gizlilik Politikası</a>
+    </div>
+  </footer>
+
+  <script src="analytics.js"></script>
+  <script src="gunluk-takip.js"></script>
+</body>
+</html>
