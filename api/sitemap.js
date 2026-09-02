@@ -42,6 +42,10 @@ module.exports = function handler(request, response) {
   {
     url: `${siteUrl}/gizlilik.html`,
     priority: "0.5"
+  },
+       {
+    url: `${siteUrl}/gunluk-takip.html`,
+    priority: "0.8"
   }
 ];
   const foodPages = foodSlugs.map((slug) => ({
