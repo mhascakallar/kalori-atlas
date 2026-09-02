@@ -132,7 +132,7 @@ async function loadFoods() {
   const resultsBody = document.getElementById("resultsBody");
 
   try {
-    const response = await fetch("foods.json?v=3");
+    const response = await fetch("foods.json?v=4");
 
     if (!response.ok) {
       throw new Error("Besin verileri yüklenemedi.");
