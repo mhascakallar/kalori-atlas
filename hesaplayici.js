@@ -68,4 +68,45 @@ calorieForm.addEventListener("submit", function (event) {
     behavior: "smooth",
     block: "start"
   });
+    const calorieTargets = {
+    maintenance: maintenanceCalories,
+    loss: weightLossCalories,
+    gain: weightGainCalories
+  };
+
+  const proteinTarget = Math.round(weight * 1.8);
+  const fatTarget = Math.round(weight * 0.8);
+
+  document.querySelectorAll(".transfer-target").forEach((button) => {
+    button.onclick = () => {
+      const selectedCalories = Math.round(
+        calorieTargets[button.dataset.goal]
+      );
+
+      const carbohydrateTarget = Math.max(
+        0,
+        Math.round(
+          (
+            selectedCalories -
+            proteinTarget * 4 -
+            fatTarget * 9
+          ) / 4
+        )
+      );
+
+      const dailyTargets = {
+        calories: selectedCalories,
+        protein: proteinTarget,
+        carbs: carbohydrateTarget,
+        fat: fatTarget
+      };
+
+      localStorage.setItem(
+        "kaloriAtlasDailyTargets",
+        JSON.stringify(dailyTargets)
+      );
+
+      window.location.href = "gunluk-takip.html";
+    };
+  });
 });
